@@ -1,28 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import ClassCounter from "./components/ClassCounter";
+import Counter from "./components/Counter";
+import PostItmes from "./components/PostItmes";
+import './styles/App.css'
 
 function App() {
-
-  const [likes, setLikes] = useState(0);
-  const[value, setValue] = useState('Tekstas inpute')
-
-  function increment() {
-    setLikes(likes+1)
-  }
-
-  function decrement() {
-    setLikes(likes-1)
-  }
-
   return (
     <div className="App">
-      <h1>{likes}</h1>
-      <h2>{value}</h2>
-      <button onClick={increment}>Pridėti</button>
-      <button onClick={decrement}>Atimti</button>
-      <input
-        type="text"
-        value={value}
-        onChange={event => setValue(event.target.value)}/>
+      <Counter />
+      <ClassCounter />
+      <PostItmes />
     </div>
   );
 }
